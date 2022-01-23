@@ -12,13 +12,11 @@ func InitRouter() {
 	r := gin.New()
 
 	router := r.Group("api/v1")
-	{
-		router.GET("hello", func(c *gin.Context) {
-			c.JSON(http.StatusOK, gin.H{
-				"msg": "OK",
-			})
+	router.GET("hello", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"msg": "OK",
 		})
-	}
+	})
 
 	r.Run(utils.HttpPort)
 }
